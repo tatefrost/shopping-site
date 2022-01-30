@@ -2,6 +2,13 @@
 {% extends 'base.html' %}
 
 {% block body %}
+{% for melon in cart %}
+Melon name {{ melon.common_name }}
+Quantity {{ melon.quantity }}
+Price ${{ "%0.2f" | format(melon.price) }}
+Total ${{ "%0.2f" | format(melon.cart_cost) }}
+{% endfor %}
+Total: ${{ "%0.2f" | format(total) }}
 
     <table class="table table-striped">
         <thead>
